@@ -1,0 +1,22 @@
+{
+  "name": "mers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c1rabbit/MERS.git"
+  },
+  "keywords": [
+    "mers"
+  ],
+  "author": "c1rabbit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c1rabbit/MERS/issues"
+  },
+  "homepage": "https://github.com/c1rabbit/MERS#readme"
+}
