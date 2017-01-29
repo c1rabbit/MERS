@@ -1,16 +1,16 @@
 //mod 10 weight 2
-function generate (orgID,loanNum) {
+function generate (orgID, loanNum) {
   if (orgID.toString().length != 6 ){
-    return "[error]: org ID is not 6 digits";
+    console.log("\t[error]: org ID is not 6 digits")
+    return null;
   } else if (loanNum.toString().length > 9){
-    return "[error]: loan number is longer than 9 digits"
+    console.log("\t[error]: loan number is longer than 9 digits");
+    return null;
   } else if (loanNum.toString().length < 9){
-    while(loanNum.toString().length < 9){
+    while (loanNum.toString().length < 9){
       loanNum = "0" + loanNum;
     }
-    console.log("orgID: " + orgID + "\tloanNum: " + loanNum);
-  } else{
-    console.log("orgID: " + orgID + "\tloanNum: " + loanNum);
+    //console.log("orgID: " + orgID + "\tloanNum: " + loanNum);
   }
   var temp = orgID.toString() + loanNum.toString();
   var sum = 0;
@@ -37,6 +37,10 @@ function generate (orgID,loanNum) {
 }
 
 function validate (min){
+  if(min.toString().length != 16){
+    console.log("\t[error]: MIN length is not 16 digits")
+    return null;
+  }
   var digit = generate(min.toString().substring(0,6),min.toString().substring(6,15));
   return digit == min.toString().substring(15);
 }
