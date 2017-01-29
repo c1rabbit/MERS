@@ -1,4 +1,4 @@
-# MERS
+# MERS-MIN
 
 ## Purpose
 Referring to the MERS(Mortgage Electronic Registration Systems), this module uses a mod 10 weight 2 algorithm on a 15 digit string (comprised of a 6-digit organization ID and up to 15-digit loan number) to compute the 16th checksum digit.
