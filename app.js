@@ -41,19 +41,6 @@ function validate (min){
   return digit == min.toString().substring(15);
 }
 
-console.log(generate("0123","0123"));
-console.log(generate("123456","0123456789"));
-console.log("--------------");
-console.log(generate("123456","012034"));
-console.log(generate("125647","1"));
-console.log(generate("111111","111111111"));
-console.log(validate("1111111111111117"));
-console.log(generate("516311","111111111"));
-console.log(validate("5163111111111115"));
-console.log(generate("516171","151111111"));
-console.log(validate("5161711511111110"));
-
-
 module.exports = {
     generate,
     validate
