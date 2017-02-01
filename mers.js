@@ -1,13 +1,13 @@
 //mod 10 weight 2
 function generate (orgID, loanNum) {
-  if (orgID.toString().length != 6 ){
-    console.log("\t[error]: org ID is not 6 digits")
+  if (orgID.toString().length != 7 ){
+    console.log("\t[error]: org ID is not 7 digits")
     return null;
-  } else if (loanNum.toString().length > 9){
-    console.log("\t[error]: loan number is longer than 9 digits");
+  } else if (loanNum.toString().length > 10){
+    console.log("\t[error]: loan number is longer than 10 digits");
     return null;
-  } else if (loanNum.toString().length < 9){
-    while (loanNum.toString().length < 9){
+  } else if (loanNum.toString().length < 10){
+    while (loanNum.toString().length < 10){
       loanNum = "0" + loanNum;
     }
     //console.log("orgID: " + orgID + "\tloanNum: " + loanNum);
@@ -32,17 +32,23 @@ function generate (orgID, loanNum) {
   //console.log("sum" + sum);
   var digit = Math.ceil(sum/10)*10 - sum
   //console.log(Math.ceil(sum/10)*10);
-  return digit;
+  var output = {
+    "orgID": orgID,
+    "loanNum": loanNum,
+    "digit": digit,
+    "min": orgID + loanNum + digit
+  }
+  return output;
 
 }
 
 function validate (min){
-  if(min.toString().length != 16){
-    console.log("\t[error]: MIN length is not 16 digits")
+  if(min.toString().length != 18){
+    console.log("\t[error]: MIN length is not 18 digits")
     return null;
   }
-  var digit = generate(min.toString().substring(0,6),min.toString().substring(6,15));
-  return digit == min.toString().substring(15);
+  var digit = generate(min.toString().substring(0,7),min.toString().substring(7,17)).digit;
+  return digit == min.toString().substring(17);
 }
 
 module.exports = {
