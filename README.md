@@ -6,8 +6,8 @@ Referring to the MERS(Mortgage Electronic Registration Systems), this module use
 The organizaion id + loan number + checksum digit should yield a valid 18-digit MIN(Mortgage Identification Number)
 
 ## Installation
-* install node module `npm install mers --save`
-* use in application `var mers = require('mers')`
+* install node module: `npm install mers --save`
+* to use in Node.js application: `var mers = require('mers')`
 
 ## Methods
 
