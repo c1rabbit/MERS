@@ -1,5 +1,13 @@
 //mod 10 weight 2
-function generate (orgID, loanNum) {
+function generate (orgID, loanNumber) {
+  //strip non-numeric or letters
+  loanNumber = loanNumber.replace(/\D/g,"");
+  orgID = orgID.replace(/\D/g,"");
+
+  //string letters
+  var loanNum = loanNumber.replace(/[a-z]/gi,"");
+  orgID = orgID.replace(/[a-z]/gi,"");
+
   if (orgID.toString().length != 7 ){
     throw new Error("org ID is not 7 digits")
     //return null;
@@ -34,7 +42,7 @@ function generate (orgID, loanNum) {
   //console.log(Math.ceil(sum/10)*10);
   var output = {
     "orgID": orgID,
-    "loanNum": loanNum,
+    "loanNum": loanNumber,
     "digit": digit,
     "min": orgID + loanNum + digit
   }

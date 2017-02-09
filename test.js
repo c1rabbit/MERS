@@ -18,7 +18,6 @@ describe('mers', function() {
       var test = function(){ mers.generate("1234567","12345678901");}
       expect(test).to.throw(Error);
     });
-
   });
   describe('generate() with valid input', function() {
     it('sample min 1', function() {
@@ -32,6 +31,18 @@ describe('mers', function() {
     });
     it('sample min 4', function() {
       assert.equal(0, mers.generate("1010116","0000000104").digit);
+    });
+    it('sample min 4 w/ letter in Loan Number', function() {
+      assert.equal(0, mers.generate("1010116","V104").digit);
+    });
+    it('sample min 4 w/ letter in Loan Number in middle', function() {
+      assert.equal(0, mers.generate("1010116","01V04").digit);
+    });
+    it('sample min 4 w/ "@" in Loan Number', function() {
+      assert.equal(0, mers.generate("1010116","@0104").digit);
+    });
+    it('sample min 4 w/ "-" in Loan Number', function() {
+      assert.equal(0, mers.generate("1010116","0-1-04").digit);
     });
   });
   describe('validate() with invalid input', function() {
