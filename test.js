@@ -1,16 +1,22 @@
 var assert = require('assert');
+var should = require('chai').should;
+var expect = require('chai').expect;
 var mers = require('./mers');
 
 describe('mers', function() {
   describe('generate() with invalid input', function() {
     it('orgID too short', function() {
-      assert.equal(null, mers.generate("123456",null));
+      var test = function(){mers.generate("123456",null);}
+      expect(test).to.throw(Error);
     });
     it('orgID too long', function() {
-      assert.equal(null, mers.generate("12345678",null));
+      var test = function(){ mers.generate("12345678",null);}
+      expect(test).to.throw(Error);
+
     });
     it('loanNum too long', function() {
-      assert.equal(null, mers.generate("1234567","12345678901"));
+      var test = function(){ mers.generate("1234567","12345678901");}
+      expect(test).to.throw(Error);
     });
 
   });
@@ -30,10 +36,12 @@ describe('mers', function() {
   });
   describe('validate() with invalid input', function() {
     it('min too long', function() {
-      assert.equal(null, mers.validate("1234567890123456789"));
+      var test = function(){ mers.validate("1234567890123456789");}
+      expect(test).to.throw(Error);
     });
     it('min too short', function() {
-      assert.equal(null, mers.validate("12345678901234567"));
+      var test = function(){ mers.validate("12345678901234567");}
+      expect(test).to.throw(Error);
     });
   });
   describe('validate() with valid input', function() {

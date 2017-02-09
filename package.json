@@ -11,7 +11,9 @@
     "url": "git+https://github.com/c1rabbit/mers-min.git"
   },
   "keywords": [
-    "mers", "min", "mortgage"
+    "mers",
+    "min",
+    "mortgage"
   ],
   "author": "c1rabbit",
   "license": "MIT",
@@ -20,6 +22,7 @@
   },
   "homepage": "https://github.com/c1rabbit/mers-min#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^3.2.0"
   }
 }
